@@ -9,9 +9,11 @@
     "prepublish": "npm run delete:git",
     "delete:git": "node src/build/deleteGit.js"
   },
-  "pre-push": [
-    "delete:git",
-  ],
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run delete:git"
+    }
+  },
   "author": "kongkong99",
   "license": "MIT",
   "repository": "https://github.com/kongkong99/webclis",
@@ -34,5 +36,8 @@
     "egg",
     "taro",
     "rollup"
-  ]
+  ],
+  "devDependencies": {
+    "husky": "^4.3.8"
+  }
 }
