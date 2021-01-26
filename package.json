@@ -10,12 +10,6 @@
   "author": "kongkong99",
   "license": "MIT",
   "repository": "https://github.com/kongkong99/webclis",
-  "devDependencies": {
-    "chalk": "^4.1.0",
-    "commander": "^7.0.0",
-    "fs-extra": "^9.1.0",
-    "inquirer": "^7.3.3"
-  },
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^7.0.0",
