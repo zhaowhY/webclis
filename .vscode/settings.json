@@ -1,0 +1,3 @@
+{
+  "editor.formatOnSave": true, // 根据情况使用，如何注释掉可以自动格式，则注释掉
+}

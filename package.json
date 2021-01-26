@@ -1,0 +1,31 @@
+{
+  "name": "webcku",
+  "version": "0.0.1",
+  "description": "kinds of webcli",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "rm -rf example && node src example",
+    "release": "sh publish.sh"
+  },
+  "author": "kongkong99",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.0.0",
+    "fs-extra": "^9.1.0",
+    "inquirer": "^7.3.3"
+  },
+  "bin": {
+    "webcli": "src/index.js"
+  },
+  "keywords": [
+    "quick start",
+    "web project",
+    "vue",
+    "eslint",
+    "react",
+    "egg",
+    "taro",
+    "rollup"
+  ]
+}
