@@ -1,6 +1,6 @@
 ## Installation
 ```
-$ npm i -g webclis
+$ npm i -g kk-webcli
 ```
 
 ## build Step

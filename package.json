@@ -1,5 +1,5 @@
 {
-  "name": "webclis",
+  "name": "kk-webcli",
   "version": "1.0.0",
   "description": "kinds of webcli",
   "main": "src/index.js",
