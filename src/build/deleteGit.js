@@ -19,5 +19,6 @@ async function deleteGit() {
   log.success('clear success!')
 }
 
+
 deleteGit()
 
