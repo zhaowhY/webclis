@@ -1,6 +1,54 @@
-# 脚手架工程需要实现的内容
+## Installation
+```
+$ npm i -g webclis
+```
 
-## 相关链接
-- [fs-extra](https://www.npmjs.com/package/fs-extra)
-- [Inquirer.js](https://juejin.cn/post/6844903480700698638)
-- [chalk](https://www.npmjs.com/package/chalk)
+## build Step
+```
+# create base project
+$ webcli demo
+$ cd demo
+
+# install
+$ npm i
+
+# start
+$ npm start
+```
+## sass安装慢，可以采用下面方法
+```
+npm i --registry=https://registry.npm.taobao.org
+```
+
+### vue-simple-cli
+- 简易版
+- stack: `vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`svg-sprite-loader`
+- style: `sass`
+- eslint: `airbnb-base`
+
+### vue-cli
+- stack: `vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`vuex-persistedstate`+`svg-sprite-loader`+`用户权限模块`
+- style: `sass`
+- eslint: `airbnb-base`
+
+
+### egg-cli
+- Egg.js 为企业级框架和应用而生，后台服务node框架
+- 集成了 mysql + 文件上传 + websocket-IO + 邮件服务 + 各类写法demo
+
+### taro-cli
+taro base project
+- style sheet: `less`
+
+### rollup-cli
+- 利用rollup便捷打包函数库和工具库， 默认配置了(umd, esm, cjs)三种方式
+
+## project test
+```
+# clone project
+$ git clone https://github.com/kongkong99/webclis.git
+
+# create base project 
+$ node src demo
+
+```

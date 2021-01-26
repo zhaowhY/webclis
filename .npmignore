@@ -4,3 +4,4 @@ node_modules
 TODO.md
 .DS_Store
 .vscode
+src/clis/**/.git

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo</title>
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    .console-wrapper {
+      margin: auto;
+      padding: 12px;
+      width: 80%;
+      background: #eee;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="console-wrapper">
+    <h1>用户名: <span id="userName"></span></h1>
+    <input type="text" value="" id="inputValue"/>
+    <button type="button" onclick="submitMessage()">发送</button>
+    <div id="content"></div>
+
+  </div>
+  <script src="https://cdn.bootcss.com/socket.io/2.1.0/socket.io.js"></script>
+  <script>
+    const ulContent = document.querySelector('#content');
+    const userName = document.getElementById('userName')
+    const inputValue = document.getElementById('inputValue')
+    let userId = '';
+    function submitMessage () {
+      socket.emit('message', {
+        content: inputValue.value
+      });
+    }
+    window.onload = function () {
+      userId = `client_${parseInt(Math.random() * 10000)}`
+      userName.innerHTML = userId
+      const socket = io('/', {
+        // 实际使用中可以在这里传递参数
+        query: {
+          userId,
+        },
+        transports: ['websocket']
+      });
+
+      // 接收在线用户信息，自定义的message事件
+      socket.on('message', msg => {
+        const { userId, content } = msg
+        const li = document.createElement("div");
+        li.innerHTML = `${userId}:  ${content}`
+        ulContent.appendChild(li)
+      });
+
+      // 系统自带事件
+      socket.on('connect', () => {
+        userId = socket.id;
+        console.log('connect', userId)
+      });
+
+      socket.on('disconnect', msg => {
+        console.log('#disconnect', msg);
+      });
+
+      socket.on('disconnecting', () => {
+        console.log('#disconnecting');
+      });
+
+      socket.on('error', () => {
+        console.log('#error');
+      });
+
+      window.socket = socket;
+    };
+
+  </script>
+</body>
+
+</html>

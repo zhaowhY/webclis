@@ -1,8 +1,4 @@
 module.exports = {
-  clis: ['vue-cli'],
-
-
-
   signature: `
                 _          _ _ 
   __      _____| |__   ___| (_)
@@ -12,5 +8,4 @@ module.exports = {
                                
                                                                
   `
-
 }
