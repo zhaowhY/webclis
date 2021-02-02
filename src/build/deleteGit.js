@@ -14,7 +14,9 @@ async function deleteGit() {
   })
 
   clisName.forEach(dirName => {
-    execa('rm', ['-rf', '.git'], { cwd: path.join(__dirname, '../clis', dirName) });
+    const deleteDir = path.join(__dirname, '../clis', dirName);
+    execa('rm', ['-rf', '.git'], { cwd: deleteDir });
+    execa('rm', ['-rf', 'package-lock.json'], { cwd: deleteDir });
   })
   log.success('clear success!')
 }
