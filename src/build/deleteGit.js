@@ -5,7 +5,7 @@ const log = require('../log')
 
 // 删除clis下面项目中的.git文件
 async function deleteGit() {
-  log.warning('start clear clis .git!')
+  log.warning('start clear clis .git and package-lock.json!')
   const { stdout } = await execa('ls', { cwd: path.join(__dirname, '../clis') });
   const clisName = stdout.split('\n')
 
