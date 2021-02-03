@@ -32,9 +32,9 @@ const babelOptions = {
 const plugins = [
   // less(),
   json(),
+  nodeResolve(),
   commonjs(),
   babel(babelOptions),
-  nodeResolve(),
   replace({ // 将某些变量或字符串转化为固定值
     exclude: 'node_modules/**',
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
