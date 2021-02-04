@@ -6,7 +6,6 @@ const fs = require('fs')
 const commonjs = require('@rollup/plugin-commonjs');
 const replace = require('@rollup/plugin-replace');
 const json = require('@rollup/plugin-json');
-const nodePolyfills = require('rollup-plugin-node-polyfills'); // 垫片，必要插件
 
 
 const resolvePath = function (...paths) {
@@ -32,14 +31,15 @@ const babelOptions = {
 const plugins = [
   // less(),
   json(),
-  nodeResolve(),
+  nodeResolve({
+    browser: false //  是否浏览器环境使用
+  }),
   commonjs(),
   babel(babelOptions),
   replace({ // 将某些变量或字符串转化为固定值
     exclude: 'node_modules/**',
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   }),
-  nodePolyfills(),
 ]
 
 // 打包esm模块，支持按需加载和全部引入
