@@ -26,7 +26,6 @@ class Sidebar extends Component {
     const { type = 'img', name } = icon;
     if (type === 'component') return componentIcon[name];
     if (type === 'img') {
-      console.log(222, require(`@/assets/menu/image/${name}`));
       return (<img
         src={require(`@/assets/menu/image/${name}`).default}
         alt=""
@@ -48,7 +47,7 @@ class Sidebar extends Component {
           icon={this.formatImg(icon)}
           title={name}
         >
-          {this.formatLayoutMenu(children) }
+          {this.formatLayoutMenu(children)}
         </SubMenu>
       );
     }
