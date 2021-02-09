@@ -7,7 +7,8 @@
     "start": "rm -rf demo && node src demo",
     "release": "sh publish.sh",
     "prepublish": "npm run prepush",
-    "prepush": "node src/build/prePush.js"
+    "prepush": "node src/build/prepush.js",
+    "postpublish": "node src/build/postpublish.js"
   },
   "husky": {
     "hooks": {
