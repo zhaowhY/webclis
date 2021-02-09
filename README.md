@@ -31,6 +31,11 @@ npm i --registry=https://registry.npm.taobao.org
 - style: `sass`
 - eslint: `airbnb-base`
 
+### react-cli
+- stack: `react` + `react-router` + `antd` + `mobx`
+- style: `less`
+- eslint: `airbnb-base`
+
 
 ### egg-cli
 - Egg.js 为企业级框架和应用而生，后台服务node框架

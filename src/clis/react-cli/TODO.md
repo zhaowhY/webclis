@@ -1,0 +1,16 @@
+## 实现内容
+- [x] 路由部分
+- [x] store部分
+- [x] http-axios
+- [x] 引入antd，样式自定义
+- [x] antd dayjs配置, 语意化配置
+- [x] mobx 指向性问题
+- [x] mobx 持久化问题
+- [x] proxy
+- [x] classnames(less), 加载less有问题
+- [x] 添加进度条
+- [x] 初始化reset 样式文件
+- [x] router index.js文件函数处理
+- [x] layout布局内容
+- [x] 页面错误时，无法打开异常去掉
+- [x] route 中路由支持拼接

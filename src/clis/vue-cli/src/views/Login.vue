@@ -49,8 +49,8 @@
 export default {
   data: () => ({
     ruleForm: {
-      name: '',
-      password: ''
+      name: 'admin',
+      password: 'admin'
     },
     rules: {
       name: [{ required: true, message: '请输入账号', trigger: 'blur' }],

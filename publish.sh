@@ -23,3 +23,6 @@ echo "git push"
 git push
 
 echo "All done!!!"
+
+# 添加新项目时注意信息
+# 修改readme
