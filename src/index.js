@@ -66,14 +66,16 @@ async function copyProject(projectName, cliType) {
   }
 
   fs.copySync(resolvePath(`./clis/${cliType}`), targetPath)
-  await initGit(targetPath)
+  initGit(targetPath)
   log.success('create project success!')
   log.success(config.signature)
 }
 
-async function initGit(path) {
-  await execa('git', ['init',], { cwd: path });
-  await execa('git', ['add', '.'], { cwd: path });
-  await execa('git', ['commit', '-m', 'init'], { cwd: path });
+function initGit(path) {
+  execa('git', ['init',], { cwd: path });
+  execa('git', ['add', '.'], { cwd: path });
+  execa('git', ['commit', '-m', 'init'], { cwd: path });
+  execa('git', ['commit', '-m', 'init'], { cwd: path });
+  execa('mv', ['gitignore', '.gitignore'], { cwd: path });
 }
 

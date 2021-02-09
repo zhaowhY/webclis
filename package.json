@@ -6,12 +6,12 @@
   "scripts": {
     "start": "rm -rf demo && node src demo",
     "release": "sh publish.sh",
-    "prepublish": "npm run delete:git",
-    "delete:git": "node src/build/deleteGit.js"
+    "prepublish": "npm run prepush",
+    "prepush": "node src/build/prePush.js"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run delete:git"
+      "pre-push": "npm run prepush"
     }
   },
   "author": "kongkong99",

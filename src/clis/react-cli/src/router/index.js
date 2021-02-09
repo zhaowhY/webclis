@@ -54,4 +54,3 @@ const routes = formatPath(modulesRoute);
 export const flatRoutes = flatRoute(routes);
 
 export const layoutRoutes = layoutRoute(cloneDeep(routes));
-
