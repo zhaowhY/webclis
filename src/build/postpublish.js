@@ -4,7 +4,7 @@ const log = require('../log');
 
 // 上传至npm时，会将每个cli中到.gitignore变为.npmigonre, 所以上传之前需要重命名gitignore, 安装时，在转化为.gitignore
 // 删除clis下面项目中的.git文件
-(async function deleteGit() {
+(async function gitignoreInit() {
   const { stdout } = await execa('ls', { cwd: path.join(__dirname, '../clis') });
   const clisName = stdout.split('\n')
 
@@ -13,11 +13,10 @@ const log = require('../log');
   })
 
   clisName.forEach(dirName => {
-    const deleteDir = path.join(__dirname, '../clis', dirName);
-    execa('mv', ['gitignore', '.gitignore'], { cwd: deleteDir });
-
+    const targetDir = path.join(__dirname, '../clis', dirName);
+    execa('mv', ['gitignore', '.gitignore'], { cwd: targetDir });
   })
-  log.success('postpublish action success!')
+  log.success('gitignoreInit action success!')
 })()
 
 
