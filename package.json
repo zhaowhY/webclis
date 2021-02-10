@@ -11,9 +11,7 @@
     "postpublish": "node src/build/postpublish.js"
   },
   "husky": {
-    "hooks": {
-      "pre-push": "npm run prepush"
-    }
+    "hooks": {}
   },
   "author": "kongkong99",
   "license": "MIT",
