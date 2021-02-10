@@ -7,3 +7,4 @@ example
 *.tgz
 .vscode
 src/clis/**/.git
+package-lock.json

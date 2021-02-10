@@ -5,3 +5,4 @@ TODO.md
 .DS_Store
 .vscode
 src/clis/**/.git
+package-lock.json
