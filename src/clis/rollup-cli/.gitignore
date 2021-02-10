@@ -1,9 +1,0 @@
-es
-dist
-lib
-.DS_Store
-node_modules
-
-*.rdb
-*.log
-*.gz
