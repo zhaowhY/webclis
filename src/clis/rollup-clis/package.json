@@ -41,11 +41,5 @@
     "rollup",
     "rollup cli",
     "cli"
-  ],
-  "files": [
-    "dist",
-    "lib",
-    "es",
-    "src"
   ]
 }
