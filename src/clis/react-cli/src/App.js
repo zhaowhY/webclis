@@ -4,7 +4,7 @@ import store from '@/store';
 import PersistMobx from '@/store/PersistMobx';
 import Layout from '@/components/Layout';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
 } from 'react-router-dom';
 
 class App extends Component {
