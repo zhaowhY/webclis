@@ -50,7 +50,8 @@ function resolvePath(...paths) {
  */
 async function copyProject(projectName, cliType) {
   const targetPath = path.join(process.cwd(), projectName);
-  if (!fs.ensureDirSync(targetPath)) {
+
+  if (fs.existsSync(targetPath)) {
     log.warning('directory has exist, if continuing, new project will cover the directory!!!')
     const { continuing } = await inquirer.prompt([
       {
