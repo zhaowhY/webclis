@@ -73,6 +73,10 @@ async function copyProject(projectName, cliType) {
 
   await initGit(targetPath)
   log.success('create project success!')
+  log.success('')
+  log.warning(`cd ${projectName}`)
+  log.warning('npm i')
+
   log.success(config.signature)
 }
 
