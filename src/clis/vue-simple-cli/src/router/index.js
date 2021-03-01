@@ -9,7 +9,7 @@ const route = new Router({
     {
       path: '/',
       name: '首页',
-      component: () => import('../views/Index.vue'),
+      component: () => import('@/views/Index.vue'),
       hidden: true
     }
   ]

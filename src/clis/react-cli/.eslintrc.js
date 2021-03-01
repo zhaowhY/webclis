@@ -22,7 +22,7 @@ module.exports = {
         peerDependencies: false
       }
     ],
-    'no-console': 'off',
+    'no-console': 'warn',
     'no-debugger': 'warn',
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'max-len': [

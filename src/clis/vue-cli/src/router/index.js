@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Store from '@/store/index';
+import Store from '@/store';
 import Layout from '@/views/layout/Index.vue';
-import { permission } from '@/config/permissions.js';
+// eslint-disable-next-line import/no-cycle
+import { permission } from '@/config/permissions';
 // router lazy load
 Vue.use(Router);
-
 
 export const commonRoutesMap = [
   {
     path: '/login',
     name: '登录页',
-    component: () => import('../views/Login.vue'),
+    component: () => import('@/views/Login.vue'),
     hidden: true
   },
   {
@@ -93,7 +93,6 @@ export const asyncRoutesMap = [
   }
 ];
 
-
 const route = new Router({
   // mode: 'history',
   base: process.env.BASE_URL,
@@ -126,7 +125,6 @@ route.beforeEach((to, from, next) => {
 
 export default route;
 
-
 /**
  *
  * hidden: false                  是否显示在左边导航栏,默认显示（hidden: false)
@@ -139,4 +137,3 @@ export default route;
   }
  */
 
-// TODO: 为什么addRouter会重新渲染siderBar

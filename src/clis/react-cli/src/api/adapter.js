@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-use-before-define */
 /**
  * axios
  * api: https://github.com/axios/axios
@@ -53,11 +55,27 @@ export const apiDecorator = (baseURL, apiLists, extraOptions = {}) => {
       }
 
       return instance({
-        url,
+        url: isREST(url) ? convertRESTAPI(url, opts) : url,
         method,
         ...options
       });
     };
   });
   return adapter;
+};
+
+const isREST = url => /(:|{|})/.test(url);
+
+const convertRESTAPI = (url, opts = {}) => {
+  if (!opts) return url;
+
+  const pathKeys = Object.keys(opts);
+
+  pathKeys.forEach((key) => {
+    const reg = new RegExp(`(:${key}|{${key}})`, 'g');
+    url = url.replace(reg, opts[key]);
+    delete opts[key];
+  });
+
+  return url;
 };

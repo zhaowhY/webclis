@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
 // 用户权限设置
 import Store from '@/store/index';
+// eslint-disable-next-line import/no-cycle
 import Router, { commonRoutesMap, asyncRoutesMap } from '@/router/index';
 import { cloneDeep } from 'lodash';
-
 
 // 扁平化routes，为了可以在sider中正确展示，目前处理层次至两级，即只有一级children
 function flatRouters(data) {
@@ -28,20 +29,22 @@ const setPerrsionRoute = () => {
       if (child.meta.roles.length === 0) {
         return true;
       }
-      return Store.state.roles.some(role => child.meta.roles.includes(role));
+      return Store.state.roles.some((role) => child.meta.roles.includes(role));
     });
   });
   Router.addRoutes(perrsionRoute);
   return perrsionRoute;
 };
 
-
 export const permission = (isPermission = true) => {
   let perrsionRoute = [];
   if (isPermission) {
     perrsionRoute = setPerrsionRoute();
   }
-  const routersMap = [...cloneDeep(commonRoutesMap), ...cloneDeep(perrsionRoute)];
+  const routersMap = [
+    ...cloneDeep(commonRoutesMap),
+    ...cloneDeep(perrsionRoute)
+  ];
 
   let routers = [];
   routersMap.forEach((item) => {

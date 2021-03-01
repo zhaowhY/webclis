@@ -6,3 +6,5 @@ TODO.md
 .vscode
 src/clis/**/.git
 package-lock.json
+webcli-demo
+

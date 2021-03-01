@@ -1,4 +1,4 @@
-#Vue-webcli
+# vue-webcli
 
 ## build step
 
@@ -16,16 +16,14 @@ npm run build:test
 npm run build
 ```
 
-## sass安装慢，可以采用下面方法
+## 常见问题
+### node-sass安装失败 [项目版本匹配node@14.15.5]
+原因node版本与node-sass不匹配  [二者版本匹配表格](https://github.com/sass/node-sass#node-version-support-policy)  [相关问题issue](https://github.com/sass/node-sass/issues/2549) 
+
+### sass安装慢，可以采用下面方法
 ```
 npm i --registry=https://registry.npm.taobao.org
 ```
-
-##　开发环境：　
-- node: 10.8
-- npm: 6.1
-- vue: 2.5
-- vue/cli: 3.0
 
 # 项目结构
 
@@ -52,9 +50,3 @@ npm i --registry=https://registry.npm.taobao.org
   - .gitlab-ci.yml # cicd 配置文件
   - README.MD
   ```
-
-### 命名规范， 见[vue风格指南](https://cn.vuejs.org/v2/style-guide/)
-- 文件名：　
-  - *.vue 结尾的文件及与其对应的 *.js *.styl 使用大驼峰　——　`HelloWorld.vue; HelloWorld.js; HelloWorld.styl`
-  - 其他文件使用小驼峰 —— `main.js`
-- 变量命名：小驼峰　——　`userName`

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /** 接口测试页面 */
 import React, { Component } from 'react';
 import adapter from '@/api';
@@ -11,7 +12,7 @@ class DemoAPI extends Component {
   initData = () => {
     Promise.all([
       adapter.getMessage(),
-      adapter.postMessage(),
+      adapter.postData({ type: 'array' }),
       rawAdapter.getMessage(),
       rawAdapter.postMessage()
     ]).then(([getValue, postValue, getRawValue, postRawValue]) => {

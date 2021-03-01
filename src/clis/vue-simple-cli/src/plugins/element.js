@@ -80,7 +80,6 @@ import {
 } from 'element-ui';
 import './element-variable.scss';
 
-
 Vue.use(Pagination);
 Vue.use(Dialog);
 Vue.use(Autocomplete);
@@ -166,4 +165,3 @@ Vue.prototype.$notify = Notification;
 Vue.prototype.$message = Message;
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
-

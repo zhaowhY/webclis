@@ -18,7 +18,6 @@ const log = require('../log');
     execa('rm', ['-rf', '.git'], { cwd: deleteDir });
     execa('rm', ['-rf', 'package-lock.json'], { cwd: deleteDir });
     execa('mv', ['.gitignore', 'gitignore'], { cwd: deleteDir });
-
   })
   log.success('clear success!')
 })()

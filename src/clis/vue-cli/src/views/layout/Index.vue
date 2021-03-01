@@ -24,7 +24,8 @@
           >
 
             <span class="login__user-name">
-              {{$store.state.user.name}}<i class="el-icon-arrow-down el-icon--right"></i>
+              {{$store.state.user.name}}
+              <i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="logout">退出</el-dropdown-item>

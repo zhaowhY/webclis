@@ -1,16 +1,15 @@
-// eslint-disable-next-line
 const path = require('path');
 
 const { env: { BASE_URL }, VUE_CLI_SERVICE: { mode } } = process;
-const resolve = dir => path.join(__dirname, dir);
+const resolve = (dir) => path.join(__dirname, dir);
 
 module.exports = {
   // 修改为相对路径
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
   devServer: {
     overlay: {
       warnings: false,
-      errors: true
+      errors: false
     },
   },
   chainWebpack: (config) => {
@@ -36,7 +35,6 @@ module.exports = {
       })
       .end();
   },
-
 
   productionSourceMap: mode !== 'production',
 };

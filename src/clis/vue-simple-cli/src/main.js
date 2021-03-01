@@ -4,7 +4,7 @@ import '@/theme/index.scss';
 // 以下不需要的时候可以注释掉
 // import { DEBUG } from '@/config';
 import '@/assets/icons';
-import '@/plugins/element.js';
+import '@/plugins/element';
 import router from '@/router';
 import store from '@/store';
 

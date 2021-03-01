@@ -27,7 +27,7 @@ class Sidebar extends Component {
     if (type === 'component') return componentIcon[name];
     if (type === 'img') {
       return (<img
-        src={require(`@/assets/menu/image/${name}`)}
+        src={require(`@/assets/menu/image/${name}`).default}
         alt=""
         style={{
           height: 14, marginRight: 10, lineHeight: 19, marginBottom: 3

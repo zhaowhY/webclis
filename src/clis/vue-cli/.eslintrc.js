@@ -8,28 +8,45 @@ module.exports = {
     '@vue/airbnb'
   ],
   rules: {
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'prefer-default-export': 'off',
-    'import/extensions': 'off',
-    'import/prefer-default-export': 'off',
-    'no-param-reassign': ['error', { props: false }],
-    // maximum line length
-    'max-len': [0, {
-      code: 80,
-      tabWidth: 2,
-      ignoreComments: true,
-      ignoreUrls: true,
-      ignoreTemplateLiterals: true,
-      ignoreRegExpLiterals: true
-    }],
+    'linebreak-style': 0,
     'no-return-await': 'off',
-    'comma-dangle': ['error', {
-      arrays: 'never',
-      objects: 'ignore',
-      imports: 'never',
-      exports: 'never',
-      functions: 'never'
-    }]
+    'no-plusplus': 'off',
+    'no-unused-expressions': 'off',
+    'comma-dangle': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false
+      }
+    ],
+    'no-console': 'warn',
+    'no-debugger': 'warn',
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'max-len': [
+      1,
+      {
+        code: 80,
+        tabWidth: 2,
+        ignoreComments: true,
+        ignoreUrls: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true
+      }
+    ],
+    'global-require': [0],
+    'func-names': [0],
+    'import/no-dynamic-require': [0],
+    'import/no-unresolved': [0, { caseSensitive: false }],
+    'no-undef': [0],
+    'class-methods-use-this': [0],
+    'implicit-arrow-linebreak': [0, 'brace-style'],
+    'import/prefer-default-export': [0],
+    'arrow-parens': 0,
+    'no-nested-ternary': 0,
+    'consistent-return': [0],
+    'no-throw-literal': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint'

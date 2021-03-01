@@ -8,6 +8,7 @@ class DemoList extends Component {
   }
 
    onChange = (date, dateString) => {
+     // eslint-disable-next-line no-console
      console.log(date, dateString);
    }
 

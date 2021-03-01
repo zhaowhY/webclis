@@ -96,7 +96,7 @@ export default {
       this.$store.commit('SET_EL_OPEN_MENU', [...new Set(menus)]);
     },
     close(idx) {
-      const menus = [...this.elOpenMenu].filter(item => item !== idx);
+      const menus = [...this.elOpenMenu].filter((item) => item !== idx);
       this.$store.commit('SET_EL_OPEN_MENU', [...new Set(menus)]);
     },
     menuMouseEnter() {

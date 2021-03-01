@@ -1,8 +1,7 @@
-
 // todo 做一个透明拦截器
 
 // 拦截函数返回值
-export const after = fn => (...args) => {
+export const after = (fn) => (...args) => {
   try {
     const data = fn(...args);
     return { code: 200, message: '', data };
@@ -12,7 +11,7 @@ export const after = fn => (...args) => {
 };
 
 // json 返回值
-export const mergeOk = data => ({
+export const mergeOk = (data) => ({
   code: 200,
   message: 'ok',
   data

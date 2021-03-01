@@ -5,6 +5,7 @@
  */
 
 import { BASE_URL } from '@/config';
+
 import { apiDecorator } from './adapter';
 
 const adapter = apiDecorator(BASE_URL, [

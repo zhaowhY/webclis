@@ -94,7 +94,7 @@ module.exports = {
     }
     config.overlay = {
       warnings: false,
-      errors: true
+      errors: false
     }
     return config
   })

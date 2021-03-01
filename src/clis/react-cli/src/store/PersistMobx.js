@@ -26,6 +26,7 @@ class PersistMobx extends Component {
       const initData = JSON.parse(sessionStorage.getItem(unit)) || {};
       update(initData);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(`session ${unit} value is not normative`);
     }
   }
