@@ -13,7 +13,7 @@ class ProjectController extends Controller {
     try {
       const regRes = name.match(/\.\w+$/) || [];
       if (!regRes) throw Error;
-      const [ type ] = regRes;
+      const [type] = regRes;
       const mapObj = {
         docx: 'application/msword',
         doc: 'application/msword',
@@ -46,7 +46,7 @@ class ProjectController extends Controller {
     try {
       const regRes = name.match(/\.?\w+$/) || [];
       if (!regRes) throw Error;
-      const [ type ] = regRes;
+      const [type] = regRes;
       console.log(regRes);
       console.log(type);
       const mapObj = {
@@ -83,7 +83,7 @@ class ProjectController extends Controller {
     const result = [];
     while ((part = await parts()) != null) {
       if (part.length) {
-        //
+        // formData中 除二进制值之外的其他字段 比如：[ 'index', '1', false, false ]
       } else {
         if (!part.filename) {
           continue;
