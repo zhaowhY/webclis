@@ -46,18 +46,18 @@ export const apiDecorator = (baseURL, apiLists, extraOptions = {}) => {
   if (extraOptions.raw) instance = instance.raw; // 输出原始值
   const adapter = {};
   apiLists.forEach(({ name, method, url }) => {
-    adapter[name] = (opts = {}) => {
+    adapter[name] = (opts = {}, extraOpts) => {
       const options = {};
       if (String.prototype.toLowerCase.call(method) === 'get') {
         options.params = opts;
       } else {
         options.data = opts;
       }
-
       return instance({
         url: isREST(url) ? convertRESTAPI(url, opts) : url,
         method,
-        ...options
+        ...options,
+        ...extraOpts
       });
     };
   });

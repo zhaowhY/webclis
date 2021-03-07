@@ -75,7 +75,7 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
   const multipart = {
-    fileExtensions: [ '.pdf', '.doc', '.docx', '.ppt', '.pptx', '.csv', '.rar', '.zip', '.xlsx', '.xls' ],
+    fileExtensions: ['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.csv', '.rar', '.zip', '.xlsx', '.xls'],
     // 增加对 json 扩展名的文件支持
     fileSize: '200mb',
     fieldSize: '200mb',
@@ -86,7 +86,7 @@ module.exports = appInfo => {
     multipart,
     static: {
       prefix: '/',
-      index: '/public',
+      dir: ['app/public']
     },
   };
 };

@@ -3,7 +3,7 @@
 module.exports = {
   timeFormat(date, fmt) {
     if (!date || !fmt) return fmt;
-    const [ , YYYY, MM, DD, HH, mm, ss ] = date
+    const [, YYYY, MM, DD, HH, mm, ss] = date
       .toISOString()
       .match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/);
     return fmt
