@@ -30,6 +30,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "7.12.12",
     "antd-dayjs-webpack-plugin": "1.0.6",
+    "compression-webpack-plugin": "6.1.1",
     "copy-webpack-plugin": "6.2.1",
     "customize-cra": "1.0.0",
     "env-cmd": "10.1.0",

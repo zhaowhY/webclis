@@ -9,6 +9,8 @@ const { override, addWebpackAlias, addBabelPlugins, addLessLoader, overrideDevSe
 const CopyPlugin = require('copy-webpack-plugin');
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin') // 打包进度条
+const CompressionPlugin = require('compression-webpack-plugin');
+
 
 // 修改启动host和端口号
 // process.env.HOST = 'www.test.com'
@@ -25,12 +27,25 @@ const webpackPlugins = [
     ]
   }),
   new AntdDayjsWebpackPlugin(),
-  new ProgressBarPlugin() // 进度条
+  new ProgressBarPlugin(), // 进度条
 ].filter(Boolean);
+
+const producitonWebpackPlugins = [
+  // gzip
+  new CompressionPlugin({
+    test: /\.js$|\.html$|.\css/, // 匹配文件名
+    threshold: 10240, // 对超过10k的数据压缩
+    deleteOriginalAssets: false // 不删除源文件
+  })
+]
 
 const addCustomize = () => (config) => {
 
   config.plugins = [...config.plugins, ...webpackPlugins]
+
+  if (process.env.NODE_ENV === 'production') {
+    config.plugins = [...config.plugins, ...producitonWebpackPlugins]
+  }
 
   if (process.env.NODE_ENV === 'production') {
     config.devtool = false;
@@ -46,6 +61,27 @@ const addCustomize = () => (config) => {
       patterns: path.resolve(__dirname, 'src/styles/variable.less') //全局引入公共的less 文件
     }
   })
+
+  // splitChunks代码分割
+  config.optimization.splitChunks = {
+    chunks: 'all',
+    maxSize: 1024000, // 100KB
+    cacheGroups: {
+      libs: {
+        name: 'chunk-libs',
+        test: /[\\/]node_modules[\\/]/,
+        priority: 10,
+        chunks: 'initial' // only package third parties that are initially dependent
+      },
+      commons: {
+        name: 'chunk-commons',
+        test: path.join(__dirname, 'src/components'), // can customize your rules
+        minChunks: 3, //  minimum common number
+        priority: 5,
+        reuseExistingChunk: true
+      }
+    }
+  };
 
 
   return config;
@@ -99,4 +135,3 @@ module.exports = {
     return config
   })
 }
-
