@@ -24,6 +24,11 @@ export default [{
       name: '样式页面',
       component: () => import('@/views/demo/Classnames'),
     },
+    {
+      path: '/demo/hook',
+      name: 'Hook页面',
+      component: () => import('@/views/demo/Hook'),
+    },
   ]
 }];
 
