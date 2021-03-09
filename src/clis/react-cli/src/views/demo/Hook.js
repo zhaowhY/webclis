@@ -7,6 +7,7 @@ export default observer(() => {
   useEffect(() => {
     update({ value: (new Date()).toString() });
   }, [update]);
+  const { value } = window.useStore('demo');
   return (
     <div>
       {value}
