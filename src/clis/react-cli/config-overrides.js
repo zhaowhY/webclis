@@ -64,25 +64,38 @@ const addCustomize = () => (config) => {
 
   // splitChunks代码分割
   config.optimization.splitChunks = {
+    // 默认 webpack4 只会对按需加载的代码做分割
     chunks: 'all',
-    maxSize: 1024000, // 100KB
-    cacheGroups: {
-      libs: {
-        name: 'chunk-libs',
+    // 表示在压缩前的最小模块大小,默认值是30kb
+    minSize: 30000,
+    // 告诉 webpack 尝试将大于 maxSize 个字节的 chunk 分割成较小的部分。 这些较小的部分在体积上至少为 minSize
+    maxSize: 100000,
+    // 分割一个模块之前必须共享的最小块数
+    minChunks: 1,
+    // 按需加载时的最大并行请求数
+    maxAsyncRequests: 5,
+    // 入口的最大并行请求数
+    maxInitialRequests: 3,
+    // 界定符
+    automaticNameDelimiter: '~',
+    // 块名最大字符数
+    automaticNameMaxLength: 30,
+    cacheGroups: { // 缓存组
+      vendors: {
         test: /[\\/]node_modules[\\/]/,
-        priority: 10,
-        chunks: 'initial' // only package third parties that are initially dependent
+        chunks: 'initial',
+        priority: 2,
+        minChunks: 2,
+        name: 'vendors',
+        priority: -10
       },
-      commons: {
-        name: 'chunk-commons',
-        test: path.join(__dirname, 'src/components'), // can customize your rules
-        minChunks: 3, //  minimum common number
-        priority: 5,
+      default: {
+        minChunks: 2,
+        priority: -20,
         reuseExistingChunk: true
       }
     }
-  };
-
+  }
 
   return config;
 }
