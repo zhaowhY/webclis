@@ -39,8 +39,7 @@
     "less": "4.1.0",
     "less-loader": "6.0.0",
     "progress-bar-webpack-plugin": "2.1.0",
-    "react-app-rewired": "2.1.8",
-    "style-resources-loader": "1.4.1"
+    "react-app-rewired": "2.1.8"
   },
   "eslintConfig": {
     "extends": [

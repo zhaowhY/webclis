@@ -3,6 +3,7 @@
  * 配置参考文档 {@link https://github.com/ReliaMM/react-app-rewired} 
  * babel-plugin-import官方文档 {@link https://www.npmjs.com/package/babel-plugin-import} 
  * less配置参考 {@link https://segmentfault.com/a/1190000023552775} 
+ * creat-react-app 配置源码 {@link https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/config/webpack.config.js}
  */
 const path = require('path');
 const { override, addWebpackAlias, addBabelPlugins, addLessLoader, overrideDevServer } = require('customize-cra');
@@ -27,7 +28,9 @@ const webpackPlugins = [
     ]
   }),
   new AntdDayjsWebpackPlugin(),
-  new ProgressBarPlugin(), // 进度条
+  new ProgressBarPlugin({
+    format: `progress [:bar]  :percent (:elapsed seconds)`,
+  }), // 进度条
 ].filter(Boolean);
 
 const producitonWebpackPlugins = [
@@ -50,17 +53,7 @@ const addCustomize = () => (config) => {
   if (process.env.NODE_ENV === 'production') {
     config.devtool = false;
   };
-  // 修改、添加loader 配置 :
-  // 所有的loaders规则是在config.module.rules(数组)的第二项
-  // 即：config.module.rules[2].oneof  (如果不是，具体可以打印 一下是第几项目)
-  // 修改 less 配置 ，规则 loader 在第7项(具体可以打印配置)
-  const loaders = config.module.rules.find(rule => Array.isArray(rule.oneOf)).oneOf;
-  loaders[7].use.push({
-    loader: 'style-resources-loader',
-    options: {
-      patterns: path.resolve(__dirname, 'src/styles/variable.less') //全局引入公共的less 文件
-    }
-  })
+
 
   // splitChunks代码分割
   config.optimization.splitChunks = {
@@ -110,16 +103,16 @@ rewriteBuildPath = () => (config) => {
   return config;
 }
 
-
-
-
-
 module.exports = {
   webpack: override(
     addBabelPlugins(['@babel/plugin-proposal-decorators', { legacy: true }]),
     addLessLoader({
       lessOptions: {
         javascriptEnabled: true,
+        // 全局引入该文件中变量
+        // modifyVars: {
+        //   hack: `true;@import "${path.resolve(__dirname, 'src/styles/variable.less')}";`
+        // },
       },
     }),
     addWebpackAlias({
