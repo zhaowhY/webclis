@@ -9,9 +9,9 @@ const log = require('../log');
   const { stdout } = await execa('ls', { cwd: path.join(__dirname, '../clis') });
   const clisName = stdout.split('\n')
 
-  new Promise((resolve) => {
-    resolve()
-  })
+  // new Promise((resolve) => {
+  //   resolve()
+  // })
 
   clisName.forEach(dirName => {
     const deleteDir = path.join(__dirname, '../clis', dirName);
