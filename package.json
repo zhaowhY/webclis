@@ -1,6 +1,6 @@
 {
   "name": "kk-webcli",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "kinds of webcli",
   "main": "src/index.js",
   "scripts": {
