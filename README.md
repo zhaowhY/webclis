@@ -6,7 +6,7 @@ $ npm i -g kk-webcli
 ## build Step
 ```
 # create base project
-$ webcli demo
+$ kkcli demo
 $ cd demo
 
 # install

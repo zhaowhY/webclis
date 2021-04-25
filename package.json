@@ -24,7 +24,7 @@
     "inquirer": "7.3.3"
   },
   "bin": {
-    "webcli": "src/index.js"
+    "kkcli": "src/index.js"
   },
   "keywords": [
     "quick start",
