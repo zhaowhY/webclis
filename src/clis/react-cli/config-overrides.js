@@ -141,3 +141,22 @@ module.exports = {
     return config
   })
 }
+
+// 如果需要打包工具函数库，可以参考下面代码
+// (config) => {
+  // 1.sdk配置
+  // config.plugins = config.plugins.filter(
+  //   p => p.constructor.name !== "ManifestPlugin" && p.constructor.name !== 'HtmlWebpackPlugin' && p.constructor.name !== 'InlineChunkHtmlPlugin'
+  // );
+  // Object.assign(config, {
+  //   output: {
+  //     ...config.output,
+  //     filename: 'index.js',
+  //     library: 'demo',
+  //     libraryTarget: 'umd'
+  //   }
+  // })
+  // delete config.optimization.splitChunks;
+  // delete config.optimization.runtimeChunk;
+  // return config;
+// }
