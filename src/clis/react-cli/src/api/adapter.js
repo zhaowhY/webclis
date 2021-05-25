@@ -73,8 +73,11 @@ const convertRESTAPI = (url, opts = {}) => {
 
   pathKeys.forEach((key) => {
     const reg = new RegExp(`(:${key}|{${key}})`, 'g');
+    const bool = reg.test(url);
     url = url.replace(reg, opts[key]);
-    delete opts[key];
+    if (bool) {
+      delete opts[key];
+    }
   });
 
   return url;
