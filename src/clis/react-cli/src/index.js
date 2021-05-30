@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import '@/config/global';
 import '@/styles/index.less';
+import 'src/assets/svgs/index';
 
 import App from './App';
 

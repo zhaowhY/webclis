@@ -39,7 +39,8 @@
     "less": "4.1.0",
     "less-loader": "6.0.0",
     "progress-bar-webpack-plugin": "2.1.0",
-    "react-app-rewired": "2.1.8"
+    "react-app-rewired": "2.1.8",
+    "svg-sprite-loader": "6.0.7"
   },
   "eslintConfig": {
     "extends": [

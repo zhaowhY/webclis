@@ -1,6 +1,7 @@
 /** 首页 */
 import React, { Component } from 'react';
 import logoImg from '@/assets/image/logo512.png';
+import SvgIcon from 'src/components/SvgIcon';
 
 class Home extends Component {
   constructor(props) {
@@ -19,6 +20,16 @@ class Home extends Component {
           alt=""
           style={{ width: '40%' }}
         ></img>
+
+        <SvgIcon
+          name="icon"
+          style={{
+            width: 100,
+            height: 100,
+            border: '1px solid red',
+            color: 'red'
+          }}
+        ></SvgIcon>
       </div>
     );
   }
