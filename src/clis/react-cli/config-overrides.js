@@ -57,10 +57,16 @@ const addCustomize = () => (config) => {
   }
 
   // svg-sprite-loader配置代码
-  // file-loader中排除src/assets/svgs
-  config.module.rules[1].oneOf[10].exclude.push(
-    path.resolve(__dirname, './src/assets/svgs')
-  );
+  config.module.rules[1].oneOf.some((item) => {
+    // file-loader中排除src/assets/svgs
+    if ((item.loader || '').includes('file-loader')) {
+      item.exclude.push(
+        path.resolve(__dirname, './src/assets/svgs')
+      );
+      return true;
+    }
+    return false;
+  });
 
   config.module.rules[1].oneOf.push({
     test: /\.svg$/,
