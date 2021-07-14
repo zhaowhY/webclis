@@ -29,7 +29,7 @@ npm i babel-plugin-import -D
 ```
   plugins: [
     ["import", {
-      "libraryName": "npmName",
+      "libraryName": "lodash",
       "libraryDirectory": "",
       "camel2DashComponentName": false,  // default: true
     }]

@@ -6,8 +6,9 @@
   "name": "rollup-cli", // npm 包名
   "version": "1.0.0", // 版本号
   "description": "rollup base cli", // npm包的简单介绍
-  "main": "lib/index.js", // cjs 形式引入的路径，node,ssr,测试等使用
-  "module": "src/index.js", // esm 形式引入的路径, mjs，会把所有内容打入包中， 浏览器可以通过<script type="module"></script>直接饮用
+  "main": "lib/index.js", // 定义了 npm 包的入口文件，browser 环境和 node 环境均可使用, 一般指向cjs包
+  "module": "src/index.js", // 定义 npm 包的 ESM 规范的入口文件(.mjs)，browser 环境和 node 环境均可使用, 浏览器可以通过<script type="module"></script>直接饮用
+  "browser": "", // 定义 npm 包在 browser 环境下的入口文件
   "unpkg": "", // cdn 形式引入的包路径 umd格式
   "typings": "lib/index.d.ts", // ts形式引入的路径
   // 自定义命令

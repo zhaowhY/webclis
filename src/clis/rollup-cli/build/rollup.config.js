@@ -7,7 +7,6 @@ const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const commonjs = require('@rollup/plugin-commonjs');
 const replace = require('@rollup/plugin-replace');
 const json = require('@rollup/plugin-json');
-const nodePolyfills = require('rollup-plugin-node-polyfills');
 const fs = require('fs');
 
 
@@ -15,23 +14,35 @@ const resolvePath = function (...paths) {
   return path.join(__dirname, '../', ...paths);
 };
 
-// 从上至下运行，
 const plugins = [
-  json(),
-  nodeResolve({ preferBuiltins: false }),
+  nodeResolve({ browser: true }),
   commonjs(),
+  json(),
   babel({
-    presets: ['@babel/preset-env'],
-    plugins: [['@babel/plugin-transform-runtime']],
-    babelHelpers: 'runtime',
-    exclude: '**/node_modules/**'
+    babelHelpers: 'bundled'
   }),
   replace({ // 将某些变量或字符串转化为固定值
     exclude: 'node_modules/**',
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   }),
-  nodePolyfills(), // 浏览器使用时，需要激活，必须放在这里
-];
+]
+
+// 一般仅打包cjs时使用
+const nodePlugins = [
+  nodeResolve({ preferBuiltins: true }),
+  commonjs({
+    dynamicRequireTargets: '**/package.json' // 代码中有动态加载了package.json
+  }),
+  json(),
+  babel({
+    babelHelpers: 'bundled'
+  }),
+  replace({ // 将某些变量或字符串转化为固定值
+    exclude: 'node_modules/**',
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  }),
+]
+
 
 // 打包esm模块，支持按需加载和全部引入
 let esmBuild = [];
