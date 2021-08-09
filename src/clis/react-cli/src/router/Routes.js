@@ -4,8 +4,9 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import { flatRoutes } from '@/router';
 import loadable from '@loadable/component';
+
+import { flatRoutes } from '@/router';
 
 class Routes extends Component {
   render() {

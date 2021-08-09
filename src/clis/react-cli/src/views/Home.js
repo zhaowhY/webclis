@@ -1,7 +1,7 @@
 /** 首页 */
 import React, { Component } from 'react';
-import logoImg from '@/assets/image/logo512.png';
 import SvgIcon from 'src/components/SvgIcon';
+import logoImg from '@/assets/image/logo512.png';
 
 class Home extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>首页</h1>
+        <h1>首页22221</h1>
         <img
           src={logoImg}
           alt=""

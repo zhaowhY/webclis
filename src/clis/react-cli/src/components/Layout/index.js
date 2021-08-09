@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Routes from '@/router/Routes';
 import {
   Button
 } from 'antd';
+import Routes from '@/router/Routes';
+
 import SideBar from './SideBar';
 import styles from './index.module.less';
 
@@ -18,7 +19,7 @@ class Layout extends Component {
     this.setState({
       sidebarVisible: false
     });
-  }
+  };
 
   render() {
     const { sidebarVisible } = this.state;

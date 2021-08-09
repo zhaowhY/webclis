@@ -45,6 +45,7 @@ module.exports = {
     'class-methods-use-this': [0],
     'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
     'react/prefer-stateless-function': 0,
+    'import/extensions': [0],
     'react/self-closing-comp': 0,
     'react/no-array-index-key': 0,
     'implicit-arrow-linebreak': [0, 'brace-style'],
