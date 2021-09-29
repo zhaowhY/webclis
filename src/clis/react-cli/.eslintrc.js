@@ -63,6 +63,7 @@ module.exports = {
     'jsx-a11y/no-noninteractive-tabindex': [0],
     'no-throw-literal': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
+    'import/order': ['warn']
   }
 };
