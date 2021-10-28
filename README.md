@@ -27,12 +27,12 @@ npm i --registry=https://registry.npm.taobao.org
 - eslint: `airbnb-base`
 
 ### vue-cli
-- stack: `vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`vuex-persistedstate`+`svg-sprite-loader`+`用户权限模块`
+- stack: `vue-cli`+`vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`vuex-persistedstate`+`svg-sprite-loader`+`用户权限模块`
 - style: `sass`
 - eslint: `airbnb-base`
 
 ### react-cli
-- stack: `react` + `react-router` + `antd` + `mobx`
+- stack: `webpack`+`react`+`react-router`+`mobx`+`axios`+`antd` +`mobx持久化js`+`svg-sprite-loader`
 - style: `less`
 - eslint: `airbnb-base`
 
