@@ -6,6 +6,7 @@
  */
 
 import axios from 'axios';
+import qs from 'qs';
 
 const formatResponse = (options = {}) => (response = {}) => {
   const { data: { code, data }, data: rawData } = response;
@@ -23,6 +24,9 @@ const getInstance = (baseURL) => {
     baseURL,
     timeout: 30000,
     withCredentials: true,
+    paramsSerializer(p) { // 解决axios转译 [] 等问题
+      return qs.stringify(p, { arrayFormat: 'repeat' });
+    }
   };
 
   const instance = axios.create(option);
