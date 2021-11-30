@@ -5,10 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "rm -rf demo && node src demo",
-    "release": "sh publish.sh",
-    "prepublish": "npm run prepush",
-    "prepush": "node src/build/prepush.js",
-    "postpublish": "node src/build/postpublish.js"
+    "release": "sh publish.sh"
   },
   "husky": {
     "hooks": {}
