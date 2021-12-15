@@ -51,7 +51,7 @@ taro base project
 ## project test
 ```
 # clone project
-$ git clone https://github.com/kongkong99/webclis.git
+$ git clone https://github.com/zhaowhy/webclis.git
 
 # create base project 
 $ node src demo
