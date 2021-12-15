@@ -20,22 +20,23 @@ $ npm start
 npm i --registry=https://registry.npm.taobao.org
 ```
 
-### vue-simple-cli
-- 简易版
-- stack: `vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`svg-sprite-loader`
-- style: `sass`
-- eslint: `airbnb-base`
-
-### vue-cli
-- stack: `vue-cli`+`vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`vuex-persistedstate`+`svg-sprite-loader`+`用户权限模块`
-- style: `sass`
-- eslint: `airbnb-base`
+## 含有的脚手架
 
 ### react-cli
-- stack: `webpack`+`react`+`react-router`+`mobx`+`axios`+`antd` +`mobx持久化js`+`svg-sprite-loader`
-- style: `less`
-- eslint: `airbnb-base`
+ `webpack`+`react`+`react-router`+`mobx`+`axios`+`antd` +`mobx持久化js`+ `svg-sprite-loader` + `less`
 
+## taro-cli taro-ts-cli
+`taro` + `taro-ui` + `scss` + `react` + `mobx` + `axios` + `mock` + `eslint`
+
+## koa-mock-cli
+轻量的koa-mockjs在线服务，利用pm2进行热重启
+
+### vue-simple-cli
+- 简易版
+`vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`svg-sprite-loader` + `sass` + `airbnb-base`
+
+### vue-cli
+- stack: `vue-cli`+`vue`+`vuex`+`vue-router`+`axios`+`element-ui`+`Mock.js`+`postcss-px2rem-exclude`+`vuex-persistedstate`+`svg-sprite-loader`+`用户权限模块` + `sass` + `airbnb-base`
 
 ### egg-cli
 - Egg.js 为企业级框架和应用而生，后台服务node框架
@@ -51,7 +52,7 @@ taro base project
 ## project test
 ```
 # clone project
-$ git clone https://github.com/kongkong99/webclis.git
+$ git clone https://github.com/zhaowhY/webclis.git
 
 # create base project 
 $ node src demo

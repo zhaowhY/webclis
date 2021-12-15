@@ -10,9 +10,9 @@
   "husky": {
     "hooks": {}
   },
-  "author": "kongkong99",
+  "author": "zhaowhY",
   "license": "MIT",
-  "repository": "https://github.com/kongkong99/webclis",
+  "repository": "https://github.com/zhaowhY/webclis",
   "dependencies": {
     "chalk": "4.1.0",
     "commander": "7.0.0",
